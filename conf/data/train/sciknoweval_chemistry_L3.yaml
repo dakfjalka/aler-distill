@@ -1,0 +1,21 @@
+dataset_name: hicai-zju/SciKnowEval
+dataset_config_name: null
+split: test
+streaming: false
+format: sciknoweval_rlvr
+text_field: null
+
+max_length: 2048
+chat_template:
+  enabled: true
+  template_name: null
+
+shuffle: true
+seed: 42
+take_n: null
+
+# Dataset-specific filters used by sciknoweval_rlvr.
+filters:
+  domains: [Chemistry]
+  types: null     # e.g. [choice]
+  levels: [L-3, L3]

@@ -1,0 +1,28 @@
+name: Qwen/Qwen3-4B-Instruct-2507
+revision: null
+trust_remote_code: true
+
+dtype: bfloat16
+device_map: auto
+attn_implementation: sdpa
+
+quantization:
+  enabled: false
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_use_double_quant: true
+
+peft:
+  enabled: false
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: none
+  target_modules: auto
+  modules_to_save: null
+  init_lora_weights: true
+
+adapters:
+  new: new
+  ref: ref

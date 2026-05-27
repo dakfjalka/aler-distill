@@ -1,0 +1,70 @@
+train_val:
+  enabled: true
+  kind: prompt_completion
+  dataset_ref: train_val
+  data_source: null
+  max_examples: 300
+  batch_size: 512
+
+mmlu:
+  enabled: true
+  data_source: mmlu
+  dataset_name: cais/mmlu
+  split: test
+  subject: all
+  max_examples: 300
+  batch_size: 512
+  answer_format: letter
+
+mmlu_pro:
+  enabled: true
+  data_source: mmlu_pro
+  dataset_name: TIGER-Lab/MMLU-Pro
+  split: test
+  max_examples: 300
+  batch_size: 512
+  use_cot: false
+  answer_format: letter
+
+gsm8k:
+  enabled: true
+  data_source: gsm8k
+  dataset_name: openai/gsm8k
+  config_name: main
+  split: test
+  max_examples: 300
+  batch_size: 512
+  use_cot: true
+  answer_format: plain
+
+gpqa:
+  enabled: true
+  data_source: gpqa
+  dataset_name: casimiir/gpqa
+  config_name: null
+  split: test
+  max_examples: 300
+  batch_size: 512
+
+ifeval:
+  enabled: true
+  data_source: ifeval
+  dataset_name: google/IFEval
+  split: train
+  max_examples: 300
+  batch_size: 512
+
+humaneval:
+  enabled: true
+  data_source: humaneval
+  dataset_name: openai/openai_humaneval
+  split: test
+  max_examples: null
+  batch_size: 512
+  timeout_s: 3.0
+  eval_timeout_s: 300.0
+  pass_at_k: 1
+  n_workers: 16
+  problem_file_dir: humaneval_problem_files
+
+seed: 42

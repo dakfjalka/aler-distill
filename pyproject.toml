@@ -1,0 +1,9 @@
+[project]
+name = "alerdistill"
+version = "0.1.0"
+description = "AlerDistill latent-repair distillation for continual LLM post-training"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["alerdistill*"]

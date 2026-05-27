@@ -1,0 +1,14 @@
+project: alerdistill
+run_name: null
+
+wandb:
+  enabled: true
+  entity: null
+  tags: ["alerdistill", "continual_learning"]
+  notes: null
+  mode: online
+
+tensorboard:
+  enabled: true
+
+log_dir: tb

@@ -1,0 +1,45 @@
+enabled: true
+
+distributed_search_mode: all_ranks
+
+prompt_length: 8
+prompt_batch_size: 8
+search_steps: 10
+prompt_lr: 0.2
+temperature: 1.0
+
+candidate_k: 32
+candidate_mode: random_vocab
+candidate_seed: 123
+candidate_topk_similar:
+  anchor_tokens: ["the", "a", "to", "of", "and", "in"]
+  topk: 64
+
+entropy_reg:
+  enabled: true
+  beta: 0.02
+
+l2_reg:
+  enabled: true
+  gamma: 0.001
+  target: init
+
+diversity_reg:
+  enabled: true
+  delta: 0.05
+
+probe_suffix:
+  text: "Answer the next question briefly and correctly: "
+
+danger:
+  kl_reduction: mean
+  ref_temperature: 1.0
+  new_temperature: 1.0
+
+repair:
+  enabled: true
+  lambda_repair: 1.0
+  kl_direction: reverse
+
+embedding_snapshot_enabled: true
+embedding_snapshot_dtype: float16

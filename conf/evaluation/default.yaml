@@ -1,0 +1,22 @@
+enabled: true
+
+# Optional: evaluate once at step=0 (before any training update).
+run_on_train_begin: true
+
+schedule: step   # none|step|epoch
+step_interval: 200
+epoch_interval: 1
+
+cleanup_tmp_dirs: true
+
+# If true, we export a merged full-weights checkpoint for hot-update evaluation when training uses LoRA.
+# This is done in a separate subprocess to avoid mutating the training model.
+offload_train_model_to_cpu: false
+merge_lora_to_full: true
+
+hot_update:
+  enabled: true
+  endpoint: update_weights_from_disk
+  flush_cache: true
+
+run_on_train_end: true

@@ -1,0 +1,11 @@
+outputs/*
+.vscode/*
+__pycache__
+tmp.py
+*.zip
+*.err
+*.log
+*.out
+tmp/*
+*.patch
+viz

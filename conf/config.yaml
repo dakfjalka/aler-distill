@@ -1,0 +1,19 @@
+defaults:
+  - method: alerdistill
+  - model: qwen3_4b_instruct_2507
+  - resources: default
+  - data/train: sciknoweval_chemistry_L3
+  - data/val_split: default
+  - data/eval: default
+  - train: default
+  - latent_repair: default
+  - rollout: sglang
+  - evaluation: default
+  - logging: default
+  - _self_
+
+experiment_name: alerdistill
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/${experiment_name}

@@ -1,0 +1,8 @@
+name: alerdistill
+
+latent_repair:
+  enabled: true
+
+ref_kl:
+  enabled: true
+  lambda_kl: 0.05

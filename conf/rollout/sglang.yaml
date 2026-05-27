@@ -1,0 +1,32 @@
+# Single persistent SGLang OpenAI-compatible server used for evaluation.
+
+engine: sglang
+
+# The service will pick a free port automatically when port=0.
+host: 127.0.0.1
+port: 0
+
+# `model_name` is the name exposed to the OpenAI client; if null, we use cfg.model.name.
+model_name: null
+
+# Generation defaults for evaluation.
+gen:
+  max_tokens: 2048
+  temperature: 0.7
+  top_p: 0.8
+
+# SGLang server lifecycle
+startup_timeout_s: 240
+shutdown_timeout_s: 30
+
+# Extra args passed to `python -m sglang.launch_server`.
+# Example:
+#   - --served-model-name
+#   - my_model
+#   - --tensor-parallel-size
+#   - "1"
+extra_args: []
+
+# Environment overrides for the SGLang subprocess.
+# CUDA_VISIBLE_DEVICES will be set automatically from `resources.infer_gpus`.
+env: {}
