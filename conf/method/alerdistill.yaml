@@ -4,5 +4,5 @@ latent_repair:
   enabled: true
 
 ref_kl:
-  enabled: true
+  enabled: false
   lambda_kl: 0.05
